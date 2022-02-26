@@ -1,3 +1,3 @@
 console.log('Hello World');//console da yazmamızı sağladı
-alert('hello world');//ekranda bir pop-up çıkartarak bize ekrana yazmamızı sağladı
-document.write('hello world')
+alert('hello world');//ekranda bir uyarı çıkartarak bize ekrana yazmamızı sağladı
+document.write('hello world')// dokümana yazmamıza olanak verir
