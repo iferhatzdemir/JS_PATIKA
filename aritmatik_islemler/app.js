@@ -45,7 +45,7 @@ let mod=403;
 mod%=2;
 console.log(mod);
 //işlem önceliği ;
-*/
+
 
 
 var ciftArray=[];
@@ -64,3 +64,22 @@ if(mainArray[a]%2==0){
 console.log(tekArray);
 console.log("----------------")
 console.log(ciftArray);
+
+// eğer aynı değerler bulunan değerleri sayıp 1 tane olana kadar arrayden silme işlemi yazılacak
+let input=3;
+let v=2;
+let virt=v ** input;
+console.log(virt);
+
+*/
+
+
+//aşağı yuvarlama
+let floor=1.9
+console.log(Math.floor(floor));
+//yukarı yuvarlama
+let ceil=2.5;
+console.log(Math.ceil(ceil));
+
+//yakına yuvarlama
+console.log(Math.round(1.49));
