@@ -1,5 +1,5 @@
 let email="iferhatzdemir@gmail.com";
-let name="İbrahim Ferhat ";
+let name="ibrahim ferhat ";
 let Lastname="ÖZDEMİR";
 
 //string verisinin uzunluğunu bulmak işin length yöntemini kullanırız length arraylerde de kullanrız.
@@ -51,3 +51,9 @@ console.log(email.includes('ğ'));
 
 console.log(email.endsWith('i2i-systems.com'));
 console.log(email.startsWith('iferhat'));
+
+
+//ilk harfleri büyük yapmak istersek 
+Lastname=Lastname.toLowerCase();
+let FullName=`${name[0].toUpperCase()}${name.slice(1)} ${Lastname[0].toUpperCase()}${Lastname.slice(1)} `;
+console.log(FullName);
