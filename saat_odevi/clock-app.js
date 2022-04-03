@@ -11,7 +11,7 @@ if (isim.length<1){
     alert ("İsminizi boş bıraktınız")
     
 }
-isim = prompt(" Tekrar Adınızı Yazın :") 
+
 function showTime() {
     let d = new Date();
     let days = ["Pazar","Pazartesi","Salı","Çarşamba","Perşembe","Cuma","Cumartesi"];
