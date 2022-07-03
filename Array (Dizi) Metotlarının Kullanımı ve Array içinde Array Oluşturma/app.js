@@ -44,4 +44,54 @@ console.log(items);
 let allUsers = [...femaleUser, ...maleUser];
 console.log("allUsers:", allUsers);
 
-let userNewArray = ["Norris"];
+let userNewArray = [
+  "Norris",
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+];
+
+//array içerisindeki bilgileri arraye dönüştürme
+
+console.log(userNewArray.toString());
+
+//join operatorü birleştirme yapmada kullanılıyor mesala ve ile olarak kulanabilitiz
+
+let joinUser = [...allUsers];
+
+console.log(joinUser.join(" and "));
+
+//arrayde istediğimiz index'e değer eklemek
+
+allUsers.splice(Math.floor(allUsers.length / 2), 0, "joinUser");
+
+console.log(allUsers);
+
+//bir arrayda aradanığımız elemanının oluup olmadığını includes ile kontrol ile  ederiz
+console.log("allUsers da Tuğberk varmı", allUsers.includes("Tuğberk"));
+
+//concat ile iki dizi bir değişkkende birleştirme yapabilriiz
+
+let usersNewAll = maleUser.concat(femaleUser);
+
+console.log("concat ile birleştirme", usersNewAll);
+
+//foreach'in dizide kullanımı
+
+const malzemeler = ["yumurta", "un", "süt"];
+
+malzemeler.forEach(function (malzeme, malzemeIndeksi) {
+  console.log(malzeme, malzemeIndeksi);
+});
