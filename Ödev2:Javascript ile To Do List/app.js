@@ -1,22 +1,3 @@
-// let taskDom = document.querySelector("#list");
-// let taskList = [];
-// taskDom.addEventListener("submit", newElement);
-
-// function newElement() {
-//   let task = document.querySelector("#task").value;
-//   console.log(task);
-//   if (task.length > 0) {
-//     taskList.push(task);
-//     let liDOM = document.createElement("li");
-
-//     liDOM.innerHTML = `  ${task} `;
-//     taskDom.appendChild(liDOM);
-//     console.log(taskList);
-//   } else {
-//     alert("lütfen Bir Task Giriniz");
-//   }
-// }
-// console.log(taskList);
 // HTML SAYFASINDAKİ ELEMENTLERİN SEÇİLMESİ
 
 let btnDOM = document.querySelector("#liveToastBtn"); // liveToastBtn id'si ile ekle yazan butona seçtik ve bu butonu btnDOM değişkenine atadık.
@@ -36,7 +17,7 @@ for (let i = 0; i < ullength.length; i++) {
 
 // Butonlara dinleyici tanımlanması
 
-btnDOM.addEventListener("click", elemanEkle); // addEventListener ile "click" dediğimiz için butona tıklandığında  elemanEkle fonksiyonu çalışacak.
+btnDOM.addEventListener("click", taskAdd); // addEventListener ile "click" dediğimiz için butona tıklandığında  taskAdd fonksiyonu çalışacak.
 
 //Fonksiyonlar
 
@@ -49,7 +30,7 @@ function removeButton() {
 }
 
 //ELEMAN EKLEMEK İÇİN GEREKENLER
-function elemanEkle() {
+function taskAdd() {
   if (taskDOM.value == "") {
     // input değeri boş girildiğinde ve girilmediğinde
     $(".error").toast("show"); //error clasını kullanarak
