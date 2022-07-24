@@ -24,3 +24,4 @@ PRODUCTS.forEach((product, index, array) => {
   console.log(product[index]);
   userListDOM.appendChild(liDOM);
 });
+//forEach genellikle array içerisinde kullanırılır
