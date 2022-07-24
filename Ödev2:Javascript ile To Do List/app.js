@@ -31,7 +31,7 @@ function removeButton() {
 
 //ELEMAN EKLEMEK İÇİN GEREKENLER
 function taskAdd() {
-  if (taskDOM.value == "") {
+  if (taskDOM.value.length === 0 || !taskDOM.value.trim()) {
     // input değeri boş girildiğinde ve girilmediğinde
     $(".error").toast("show"); //error clasını kullanarak
   } else {
@@ -39,7 +39,7 @@ function taskAdd() {
 
     let liDOM = document.createElement("li"); //yeni bir li elementi yaratacagımızı ilan edip yaratacagımız li elementini liDOM değişkenine atayacağımızı söyledik.
     listDOM.appendChild(liDOM); // Yaratacağımız liDOM değişkeninin her seferinde mevcut listenin en sonuna eklenmesi gerektiğini tanımladık.
-    liDOM.innerHTML = task.value; // Burda ise inputID.değer diyerek inputa girilen değerlerin liDOM'a atanması gerektiğini belirttik.
+    liDOM.innerHTML = task.value.trim(); // Burda ise inputID.değer diyerek inputa girilen değerlerin liDOM'a atanması gerektiğini belirttik.
     taskDOM.value = "";
     //SONRADAN EKLENEN MADDELERİ SİLMEK İÇİN AYNI İŞLEMLERİN TEKRARI
     liDOM.onclick = check;
@@ -51,6 +51,5 @@ function taskAdd() {
     closeButton.onclick = removeButton;
     liDOM.append(closeButton);
     listDOM.append(liDOM);
-    inputElement.value = "";
   }
 }
