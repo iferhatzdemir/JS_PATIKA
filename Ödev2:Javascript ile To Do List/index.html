@@ -72,8 +72,25 @@
           alt=""
         />
         <h2>To Do List</h2>
-        <input type="text" id="task" placeholder="What Are You Doing Today?" />
-        <span onclick="newElement()" id="liveToastBtn" class="button">Add</span>
+        <div class="row">
+          <input
+            type="text"
+            id="task"
+            placeholder="What Are You Doing Today?"
+          />
+
+          <span onclick="newElement()" id="liveToastBtn" class="button"
+            >Add</span
+          >
+
+          <span
+            onclick="clearList()"
+            id="clearList"
+            class="button btn-danger"
+            style="margin: 0 auto 0 auto"
+            >Clear List</span
+          >
+        </div>
       </div>
 
       <ul id="list">
