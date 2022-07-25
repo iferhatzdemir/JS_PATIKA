@@ -7,7 +7,6 @@ let taskDOM = document.querySelector("#task"); //input'un ID'si olan task'ı se�
 let ullength = document.getElementsByTagName("li"); //burda var olan bütün li elementlerini alıp ullength'e atadık böylece elimizde kaç madde yani li olduğunu öğrendik.
 let doAllbtnDOM = document.querySelector("#doall"); // liveToastBtn id'si ile ekle yazan butona seçtik ve bu butonu btnDOM değişkenine atadık.
 
-
 console.log(Array.isArray(ullength));
 
 // MEVCUT LİSTEYİ SİLMEK İÇİN ÇARPI BUTONUNUN OLUŞTURULMASI
@@ -24,32 +23,21 @@ for (let i = 0; i < ullength.length; i++) {
 
 btnDOM.addEventListener("click", taskAdd); // addEventListener ile "click" dediğimiz için butona tıklandığında  taskAdd fonksiyonu çalışacak.
 ClearbtnDOM.addEventListener("click", clearList); // addEventListener ile "click" dediğimiz için butona tıklandığında taskClear fonksiyonu çalıltırmasını sağlar
-doAllbtnDOM.addEventListener('click',DoAllList);
+doAllbtnDOM.addEventListener("click", DoAllList);
 //Fonksiyonlar
-function DoAllList(){
-  for (var i = 0; i <ullength.length;i) {
+function DoAllList() {
+  for (var i = 0; i < ullength.length; i) {
     ullength[i].classList.toggle("checked");
-
   }
 }
 function clearList() {
-<<<<<<< HEAD
-  for (var i = 0; i < ullength.length + 1; i++) {
-    ullength[0].remove();
-=======
- 
-if(arrayLength>0){
-  for (var i = 0; i <arrayLength+2;i) {
-    console.log('length uzunluğu: '+ullength.length);
-    console.log('i nin degeri :'+i)
-    ullength[0].remove();
-    console.log(ullength[i])
-    i++;
->>>>>>> f62824bec7c7e0a13858f5549dc3d266e2d8d2b1
+  if (arrayLength > 0) {
+    for (var i = 0; i < arrayLength; i++) {
+      ullength[0].remove();
+    }
+  } else {
+    alert("silinecek task bulunamadı");
   }
-}else{
-  alert('silinecek task bulunamadı')
-}
 }
 function check() {
   this.classList.toggle("checked"); // toggle switch genelde iki şıklı (evet, hayır veya aktif pasif) gibi durumları belirtmek için kullanılır. burda toggle("checked")'i kullanarak tıklanan maddenin üstünü çiz ve yanına tik işareti koy demiş olduk.
