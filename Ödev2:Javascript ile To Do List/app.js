@@ -23,7 +23,7 @@ ClearbtnDOM.addEventListener("click", clearList); // addEventListener ile "click
 //Fonksiyonlar
 function clearList() {
   for (var i = 0; i < ullength.length + 1; i++) {
-    ullength[i].remove();
+    ullength[0].remove();
   }
 }
 function check() {
