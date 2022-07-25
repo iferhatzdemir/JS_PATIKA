@@ -37,7 +37,7 @@ function clearList() {
   for (var i = 0; i < ullength.length + 1; i++) {
     ullength[0].remove();
 =======
-  let arrayLength=ullength.length+2
+ 
 if(arrayLength>0){
   for (var i = 0; i <arrayLength+2;i) {
     console.log('length uzunluğu: '+ullength.length);
