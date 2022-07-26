@@ -47,24 +47,13 @@ function taskAdd() {
   } else {
     $(".success").toast("show");
 
-    let liDOM = document.createElement("li"); //yeni bir li elementi yaratacagımızı ilan edip yaratacagımız li elementini liDOM değişkenine atayacağımızı söyledik.
-    listDOM.appendChild(liDOM); // Yaratacağımız liDOM değişkeninin her seferinde mevcut listenin en sonuna eklenmesi gerektiğini tanımladık.
-    liDOM.innerHTML = task.value.trim();
+    liMaker(task.value.trim()); // input değeri boş değilse liMaker fonksiyonunu çalıştır.
     // Burda ise inputID.değer diyerek inputa girilen değerlerin liDOM'a atanması gerektiğini belirttik.
     taskArray.push(task.value.trim()); // taskArray'e task.value.trim() değerini ekledik.
     localStorage.setItem("taskArray", JSON.stringify(taskArray)); // localStorage'a taskArray'i json formatında ekledik.
     taskDOM.value = "";
 
     //SONRADAN EKLENEN MADDELERİ SİLMEK İÇİN AYNI İŞLEMLERİN TEKRARI
-    liDOM.onclick = check;
-
-    let closeButton = document.createElement("span");
-
-    closeButton.textContent = "\u00D7";
-    closeButton.classList.add("close");
-    closeButton.onclick = removeButton;
-    liDOM.append(closeButton);
-    listDOM.append(liDOM);
   }
 }
 
@@ -74,15 +63,16 @@ let itemsArray = localStorage.getItem("taskArray")
 console.log(itemsArray);
 
 const liMaker = (text) => {
-  const li = document.createElement("li");
-  li.textContent = text;
+  const liDOM = document.createElement("li");
+  liDOM.textContent = text;
   let closeButton = document.createElement("span");
 
   closeButton.textContent = "\u00D7";
   closeButton.classList.add("close");
   closeButton.onclick = removeButton;
-  li.append(closeButton);
-  listDOM.appendChild(li);
+  liDOM.append(closeButton);
+  listDOM.appendChild(liDOM);
+  liDOM.onclick = check;
 };
 itemsArray.forEach((item) => {
   liMaker(item);
