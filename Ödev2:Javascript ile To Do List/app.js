@@ -22,10 +22,15 @@ btnDOM.addEventListener("click", taskAdd); // addEventListener ile "click" dedi�
 ClearbtnDOM.addEventListener("click", clearList); // addEventListener ile "click" dediğimiz için butona tıklandığında taskClear fonksiyonu çalıltırmasını sağlar
 //Fonksiyonlar
 function clearList() {
-  for (var i = 0; i < ullength.length + 1; i++) {
-    ullength[0].remove();
+  if (ullength.length > 0) {
+    for (var i = 0; i < ullength.length + 1; i++) {
+      ullength[0].remove();
+    }
+  } else {
+    alert("Liste boş");
   }
 }
+
 function check() {
   this.classList.toggle("checked"); // toggle switch genelde iki şıklı (evet, hayır veya aktif pasif) gibi durumları belirtmek için kullanılır. burda toggle("checked")'i kullanarak tıklanan maddenin üstünü çiz ve yanına tik işareti koy demiş olduk.
 }
