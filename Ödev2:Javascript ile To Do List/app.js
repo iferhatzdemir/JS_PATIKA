@@ -26,6 +26,7 @@ function clearList() {
     for (var i = 0; i < ullength.length + 1; i++) {
       ullength[0].remove();
     }
+    localStorage.clear();
   } else {
     alert("Liste boş");
   }
@@ -37,6 +38,8 @@ function check() {
 
 function removeButton() {
   this.parentElement.remove(); // burda maddeyi silmek için yanı çarpının bulunduğu maddeyi silmek için parentElement.remove classını kullandık.
+let removeli=this.parentElement.id;
+localStorage.removeItem(re)
 }
 
 //ELEMAN EKLEMEK İÇİN GEREKENLER
@@ -64,6 +67,7 @@ console.log(itemsArray);
 
 const liMaker = (text) => {
   const liDOM = document.createElement("li");
+  liDOM.id=text;
   liDOM.textContent = text;
   let closeButton = document.createElement("span");
 
