@@ -7,14 +7,6 @@ let taskDOM = document.querySelector("#task"); //input'un ID'si olan task'ı se�
 let ullength = document.getElementsByTagName("li"); //burda var olan bütün li elementlerini alıp ullength'e atadık böylece elimizde kaç madde yani li olduğunu öğrendik.
 let taskArray = [];
 // MEVCUT LİSTEYİ SİLMEK İÇİN ÇARPI BUTONUNUN OLUŞTURULMASI
-for (let i = 0; i < ullength.length; i++) {
-  let closeButton = document.createElement("span"); //close icon'u span etiketi içersinde olduğu için yeni bir span elemanı oluşturup ve closeButton değişkenine atadık.
-  closeButton.textContent = "\u00D7"; // listede çarpı işaretini oluşturabilmek için "\u00D7" kullandık.
-  closeButton.classList.add("close"); // bu butona close class'ını ekledik.
-  closeButton.onclick = removeButton; // ve çarpı işaretine basınca removeButton fonsiyonunu çalıştırması gerektini söyledik.
-  ullength[i].append(closeButton); // closeButton değişkenini ullength'in 0, 1, 2... indexlerine ekleyerek aslında for döngüsünü kullanarak var olan listeye çarpı butonunu ekledik.
-  ullength[i].onclick = check; // üzerine tıklayınca check fonksiyonunu çalıştır dedik.
-}
 
 // Butonlara dinleyici tanımlanması
 
@@ -38,8 +30,11 @@ function check() {
 
 function removeButton() {
   this.parentElement.remove(); // burda maddeyi silmek için yanı çarpının bulunduğu maddeyi silmek için parentElement.remove classını kullandık.
-let removeli=this.parentElement.id;
-localStorage.removeItem(re)
+  let removeli = this.parentElement.id;
+  let localStorageArray = JSON.parse(localStorage.getItem("taskArray"));
+  let index = localStorageArray.indexOf(removeli);
+  localStorageArray.pop(index);
+  localStorage.setItem("taskArray", JSON.stringify(localStorageArray));
 }
 
 //ELEMAN EKLEMEK İÇİN GEREKENLER
@@ -67,7 +62,7 @@ console.log(itemsArray);
 
 const liMaker = (text) => {
   const liDOM = document.createElement("li");
-  liDOM.id=text;
+  liDOM.id = text;
   liDOM.textContent = text;
   let closeButton = document.createElement("span");
 

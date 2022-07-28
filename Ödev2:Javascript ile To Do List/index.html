@@ -81,22 +81,23 @@
 
           <span onclick="taskAdd()" id="liveToastBtn" class="button">Add</span>
 
+          <span onclick="listCheck()" id="listCheckBtn" class="button col-mc-6"
+            >Check All</span
+          >
           <span
-            onclick="clearList()"
-            id="clearList"
+            onclick="CheckClear()"
+            id="CheckClearBtn"
             class="button btn-danger"
-            style="margin: 0 auto 0 auto"
+            >Check Clear</span
+          >
+
+          <span onclick="clearList()" id="clearList" class="button btn-danger"
             >Clear List</span
           >
         </div>
       </div>
 
-      <ul id="list">
-        <li>Study CSS</li>
-        <li>Take a Break</li>
-        <li>Study JavaScript</li>
-        <li>Make a Dish</li>
-      </ul>
+      <ul id="list"></ul>
 
       <script src="app.js"></script>
       <script
