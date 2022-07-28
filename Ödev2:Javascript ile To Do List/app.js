@@ -4,15 +4,28 @@ let btnDOM = document.querySelector("#liveToastBtn"); // liveToastBtn id'si ile 
 let ClearbtnDOM = document.querySelector("#clearList"); // liveToastBtn id'si ile ekle yazan butona seçtik ve bu butonu btnDOM değişkenine atadık.
 let listDOM = document.querySelector("#list"); // list id'si ile ul'nin ID'si olan list'i seçtik ve listDOM'a atadık.
 let taskDOM = document.querySelector("#task"); //input'un ID'si olan task'ı seçip taskDOM'a atadık.
+let checkDOM = document.querySelector("#listCheckBtn");
 let ullength = document.getElementsByTagName("li"); //burda var olan bütün li elementlerini alıp ullength'e atadık böylece elimizde kaç madde yani li olduğunu öğrendik.
 let taskArray = [];
 // MEVCUT LİSTEYİ SİLMEK İÇİN ÇARPI BUTONUNUN OLUŞTURULMASI
 
 // Butonlara dinleyici tanımlanması
-
+checkDOM.addEventListener("click", listCheck);
 btnDOM.addEventListener("click", taskAdd); // addEventListener ile "click" dediğimiz için butona tıklandığında  taskAdd fonksiyonu çalışacak.
 ClearbtnDOM.addEventListener("click", clearList); // addEventListener ile "click" dediğimiz için butona tıklandığında taskClear fonksiyonu çalıltırmasını sağlar
-//Fonksiyonlar
+//Fonksiyonlarf
+function listCheck() {
+  if (ullength.length > 0) {
+    for (var i = 0; i < ullength.length; i++) {
+      if (!ullength[i].classList.contains("checked")) {
+        ullength[i].classList.add("checked");
+      }
+    }
+  } else {
+    alert("Liste boş");
+  }
+}
+
 function clearList() {
   if (ullength.length > 0) {
     for (var i = 0; i < ullength.length + 1; i++) {
