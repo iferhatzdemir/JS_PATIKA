@@ -36,12 +36,14 @@ console.log(ali.yas(1921));
 //Prototype Konusu ve Prototype Yöntemi
 
 Insan.prototype.yeniFonksiyon = () => {
+  //sınıfa eklenen prototype yardımıyla eklenen fonksiyon
   console.log("Merhaba Kodluyoruz");
 };
 const ayse = new Insan("ayşe", 2021);
 ayse.yeniFonksiyon();
 
 ayse.__proto__.enYeniFonksiyon = () => {
+  //objeye prototype yardımıyla eklenen fonksiyonlarının çalışmasını sağlar
   console.log("Tekrar Merhaba Kodluyoruz!");
 };
 ayse.enYeniFonksiyon();
