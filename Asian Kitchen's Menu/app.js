@@ -157,6 +157,7 @@ const listJapanFoods = () => {
 document.querySelector("#japan").addEventListener("click", listJapanFoods);
 
 //List China Foods
+
 const listChinaFoods = () => {
   let chinaFoods = "";
 
